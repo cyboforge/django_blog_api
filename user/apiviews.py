@@ -1,7 +1,6 @@
 from rest_framework import viewsets
-from rest_framework.views import APIView
 from rest_framework.response import Response
-from custom_permissions import IsOwnerOrReadOnly
+from custom_permissions import IsSelfOrReadOnly
 from user.models import User
 from user.serializers import LogInSerializer, UserSerializer
 from rest_framework.decorators import action
@@ -13,7 +12,7 @@ from rest_framework.authentication import TokenAuthentication
 
 class UserApiViewSet(viewsets.ModelViewSet):
   authentication_classes = [TokenAuthentication]
-  permission_classes = [IsOwnerOrReadOnly]
+  permission_classes = [IsSelfOrReadOnly]
 
   queryset = User.objects.all()
   serializer_class = UserSerializer
