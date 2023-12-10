@@ -1,0 +1,30 @@
+# Django development
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+# Static files (generated on deployment)
+/static/
+node_modules/
+
+# Secret keys
+.env
+
+# Database
+db.sqlite3
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Compiled Python files
+*.pyc
+
+# Dependency directories
+venv/
+env/
