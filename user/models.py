@@ -22,6 +22,8 @@ class User(AbstractUser):
   def save(self, *args, **kwargs):
     if not self.username:
       self.username = generate_random_username()
+    super(User, self).save(*args, **kwargs)
 
   def __str__(self):
     return self.email
+  
